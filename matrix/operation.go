@@ -65,7 +65,7 @@ func (rv1 RowVector) Cross(rv2 RowVector) (rv3 RowVector, err error) {
 	}
 	dim := rv1.GetShape()[1]
 	if dim != 2 && dim != 3 {
-		err = errors.New("智能计算二维和三维的向量相乘")
+		err = errors.New("只能计算二维和三维的向量相乘")
 	}
 	rv3, _ = NewRowVector(3)
 	switch dim {
@@ -182,4 +182,3 @@ func (m1 Matrix) Transpose() (m2 Matrix) {
 	}
 	return
 }
-
